@@ -6,6 +6,7 @@
 
 package com.test.jaxws.server;
 
+import java.util.List;
 import javax.jws.WebService;
 
 /**
@@ -15,5 +16,7 @@ import javax.jws.WebService;
 @WebService 
 public interface Calculator {
 
-    int add(int a, int b);
+    public int add(int a, int b);
+    
+    public List<PersonBean> getPersonList();
 }

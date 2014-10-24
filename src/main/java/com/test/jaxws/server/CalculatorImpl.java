@@ -6,6 +6,8 @@
 
 package com.test.jaxws.server;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.jws.WebService;
 
 /**
@@ -21,6 +23,23 @@ public class CalculatorImpl implements Calculator{
     @Override
     public int add(int a, int b) {
         return a + b;
+    }
+
+    @Override
+    public List<PersonBean> getPersonList() {
+        List<PersonBean> list = new ArrayList<>();
+        PersonBean pb = new PersonBean();
+        pb.setPersonId("a1");
+        pb.setPersonName("baidu");
+        list.add(pb);
+        pb.setPersonId("a2");
+        pb.setPersonName("ali");
+        list.add(pb);
+        pb.setPersonId("a3");
+        pb.setPersonName("tencent");
+        list.add(pb);
+        System.out.println("CalculatorImpl.getPersonList");
+        return list;
     }
 
 }
